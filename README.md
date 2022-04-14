@@ -14,5 +14,8 @@ in the works.
 I do not claim to write the best code, nor am the best organizationally. However, I do believe in the value of collaboration, so feel free to give any
 comments or suggestions.
 
-## Using this repo
-Please fork this and modify the values/seeds to see how things work. ::heart::
+## Using this project
+
+Please fork this and modify the values/seeds to see how things work. Pull requests are welcome but most likely denied.
+
+Cheers and thanks for reading 💞

@@ -5,8 +5,6 @@ rm(list=ls()) # Remove all items within working memory
 library(tree)
 library(ISLR2)
 attach(Carseats)
-library(kernlab)
-library(tidyverse)
 
 set.seed(3)
 
@@ -112,34 +110,4 @@ cv.tree(cv.tree.carseats, K = 10)
 
 plot(cv.tree.carseats)
 text(cv.tree.carseats)
-
-############# Problem 11 ############# 
-
-# We use the Spam dataset from the kernlab library
-data(spam)
-# each value indicates the percentage of words that appear in the email
-
-# spam <- spam %>% 
-#   mutate(type = recode(type, 
-#                     "spam" = "1", 
-#                     "nonspam" = "0"))
-# Convert the "type" column into a binary variable
-
-train <- sample(dim(spam)[1], dim(spam)[1]/2)
-spam.train <- spam[train,]
-spam.test <- spam[-train,]
-
-
-
-tree.spam <- tree(type ~ ., data = spam, subset = train)
-summary(tree.spam)
-
-plot(tree.spam)
-text(tree.spam, pretty = 0, cex = 0.6)
-
-pred.spam <- predict(tree.spam, spam.test)
-table(pred.spam, spam.test)
-
-
-
 

@@ -42,8 +42,8 @@ plot(spam.yhat, spam.test$type)
 spam.confusion <- table(spam.yhat, spam.test$type)
 spam.confusion
 
-sensitivity <- spam.confusion[2,2]/sum(spam.confusion[,2])
-specificity <- spam.confusion[1,1]/sum(spam.confusion[,1])
+spam.confusion[2,2]/sum(spam.confusion[,2]) # sensitivity
+spam.confusion[1,1]/sum(spam.confusion[,1]) # specificity
 # Sensitivity is 0.8324 and Specificity is 0.9591
 
 # We can use cross validation to check the pruned trees
@@ -53,8 +53,25 @@ plot(cv.spam$size, cv.spam$dev, type = "b")
 
 # Pruning the tree would yield no better results
 
-# Lets assume that pruning the tree would yield better results
+# Lets assume that pruning the tree would yield better results and prune the tree to 9 leaves
 
+spam.prune <- prune.tree(tree.spam, best = 9)
+plot(spam.prune)
+text(spam.prune, cex = 0.6)
+summary(spam.prune)
+
+# predictions for the new tree
+
+prune.yhat <- predict(spam.prune, spam.test, type = "class")
+plot(prune.yhat, spam.test$type)
+prune.confusion <- table(prune.yhat, spam.test$type)
+prune.confusion
+
+prune.confusion[2,2]/sum(prune.confusion[,2]) # sensitivity
+prune.confusion[1,1]/sum(prune.confusion[,1]) # specificity
+# Unpruned Sensitivity was 0.8324 and unpruned Specificity was 0.9591
+# Pruned Sensitivity is 0.8142 and pruned Specificity is 0.9467
+# Both are lower than the unpruned tree
 
 ############# Problem 13 ############# 
 

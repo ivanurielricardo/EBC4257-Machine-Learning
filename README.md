@@ -1,9 +1,5 @@
 # EBC4257-Machine-Learning
 
-Join the Discord!
-https://discord.gg/9ymhaj4K
-
-## Machine Learning Course
 
 Hey y'all!
 

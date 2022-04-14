@@ -3,7 +3,7 @@
 Join the Discord!
 https://discord.gg/9ymhaj4K
 
-Machine Learning Course
+## Machine Learning Course
 
 Hey y'all!
 

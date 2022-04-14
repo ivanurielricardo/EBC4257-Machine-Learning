@@ -26,13 +26,13 @@ summary(tree.Carseats)
 plot(tree.Carseats)
 text(tree.Carseats, pretty = 0, cex = 0.7)
 
-# Here, the most important indicator of Sales seems to be the quality of shelf location
+# Here, on my model, the most important indicator of Sales seems to be the quality of shelf location
 # The next most important indicator is the price 
 
 # We follow the tree given the questions and we can then make an approximation of how
 # many sales a store could sell
 
-# What if we were to change the seed of the seed of the random number generator?
+# What if we were to change the seed of the random number generator?
 
 # seed = 3: (benchmark)
 # seed = 4: average age of pop becomes more important than price
@@ -70,9 +70,9 @@ summary(prune.Carseats)
 
 # Does pruning the tree improve MSE?
 
-prune.yhat <- predict(prune.Carseats, newdata = Carseats.test)
-plot(prune.yhat, Carseats.test$Sales)
-abline(0,1, col = "blue")
+# prune.yhat <- predict(prune.Carseats, newdata = Carseats.test)
+# plot(prune.yhat, Carseats.test$Sales)
+# abline(0,1, col = "blue")
 mean((prune.yhat-Carseats.test$Sales)**2)
 
 # We obtain an MSE of 5.39! Higher than the unpruned tree
